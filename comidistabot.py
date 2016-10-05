@@ -12,7 +12,7 @@ data = shelve.open("elcomidista_data", writeback=True)
 
 channel_id = sys.argv[2]
 
-for entry in rss['entries'][0:4]:
+for entry in rss['entries']:
     if entry['id'] not in data['sent_messages']:
         message = "*" + entry['title'] + "*[.](" + entry['links'][1]['href'] + ") (por " + entry['author'] + ")"
         tags = []
